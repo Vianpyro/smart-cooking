@@ -1,0 +1,14 @@
+[package]
+name = "smart-cooking-domain"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+# No I/O dependency of any kind. If a dependency needs to be added here, the
+# design is wrong: stop and raise it instead (see CLAUDE.md).
+[dependencies]

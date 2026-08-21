@@ -1,6 +1,7 @@
 # Docs and meta
 README.md
 LICENSE
+docs/
 
 # IDE and OS-specific files
 .vscode/
@@ -10,3 +11,18 @@ LICENSE
 # Version control
 .git
 .gitignore
+.gitattributes
+
+# Build output and dependencies (rebuilt inside the image)
+/target
+node_modules
+web/.svelte-kit
+web/build
+
+# Environments and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12

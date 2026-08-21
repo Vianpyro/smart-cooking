@@ -1,18 +1,29 @@
 {
-    "name": "Template Development Container",
-    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
-    "customizations": {
-        "settings": {
-            "terminal.integrated.shell.linux": "/bin/bash"
-        },
-        "vscode": {
-            "extensions": [
-                "ms-vscode.atom-keybindings",
-                "ms-vscode-remote.remote-containers",
-                "ms-azuretools.vscode-docker",
-                "myriad-dreamin.tinymist"
-            ]
-        }
-    },
-    "remoteUser": "vscode"
+  "name": "SmartCooking",
+  "dockerComposeFile": ["../compose.yml", "docker-compose.yml"],
+  "service": "app",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "24"
+    }
+  },
+  "postCreateCommand": "cargo install sqlx-cli --no-default-features --features rustls,postgres --locked",
+  "remoteUser": "vscode",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "svelte.svelte-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "myriad-dreamin.tinymist",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "wayou.vscode-todo-highlight"
+      ]
+    }
+  }
 }

@@ -8,6 +8,19 @@
     "[yaml]": {
         "editor.tabSize": 2
     },
+    "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+    },
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typst]": {
+        "editor.defaultFormatter": "myriad-dreamin.tinymist"
+    },
+    "rust-analyzer.check.command": "clippy",
     "github.copilot.chat.commitMessageGeneration.instructions": [
         {
             "file": ".copilot/commit-message-instructions.md"

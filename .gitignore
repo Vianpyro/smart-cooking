@@ -1,12 +1,28 @@
 # Environments
 .env
+.env.*
+!.env.example
 
-# Super-linter outputs
-super-linter-output
-super-linter.log
+# Rust
+/target
+**/target
 
-# Prettier config
-.prettierrc
+# Node
+node_modules
+web/.svelte-kit
+web/build
+web/coverage
 
-# GitHub Actions leftovers
-github_conf
+# Typst build output
+docs/**/*.pdf
+
+# Secrets and keys
+*.pem
+*.key
+*.p12
+
+# Editors and OS
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

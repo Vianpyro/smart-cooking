@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "rust-lang.rust-analyzer",
+        "tamasfe.even-better-toml",
+        "svelte.svelte-vscode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "myriad-dreamin.tinymist",
+        "ms-azuretools.vscode-docker",
+        "eamodio.gitlens",
+        "wayou.vscode-todo-highlight"
+    ]
+}

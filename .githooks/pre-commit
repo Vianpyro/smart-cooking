@@ -1,0 +1,26 @@
+#!/bin/sh
+# Enable once with: git config core.hooksPath .githooks
+set -e
+
+echo "pre-commit: cargo fmt --check"
+cargo fmt --all --check
+
+# ponytail: whole-workspace clippy is still sub-second on this skeleton; if
+# it becomes slow as the crates grow, drop this step and rely on CI's clippy
+# job instead (say so in the commit that removes it).
+echo "pre-commit: cargo clippy"
+cargo clippy --workspace --all-targets -- -D warnings
+
+web_files=$(git diff --cached --name-only --diff-filter=ACM -- 'web/**/*.ts' 'web/**/*.svelte' 'web/**/*.js' | sed 's#^web/##')
+if [ -n "$web_files" ]; then
+	echo "pre-commit: web lint (changed files only)"
+	( cd web && echo "$web_files" | xargs npx eslint )
+	( cd web && echo "$web_files" | xargs npx prettier --check )
+fi
+
+if command -v gitleaks >/dev/null 2>&1; then
+	echo "pre-commit: gitleaks protect"
+	gitleaks protect --staged --redact
+else
+	echo "pre-commit: gitleaks not installed locally, skipping (CI still scans full history)"
+fi
