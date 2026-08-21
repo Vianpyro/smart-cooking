@@ -1,14 +1,23 @@
 {
   "name": "SmartCooking",
-  "dockerComposeFile": ["../compose.yml", "docker-compose.yml"],
+  "dockerComposeFile": [
+    "../compose.yml",
+    "docker-compose.yml"
+  ],
   "service": "app",
   "workspaceFolder": "/workspace",
   "features": {
     "ghcr.io/devcontainers/features/rust:1": {},
     "ghcr.io/devcontainers/features/node:1": {
       "version": "24"
-    }
+    },
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
   },
+  "mounts": [
+    "source=moba-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
+    "source=moba-gh-${devcontainerId},target=/home/vscode/.config/gh,type=volume"
+  ],
   "postCreateCommand": "cargo install sqlx-cli --no-default-features --features rustls,postgres --locked",
   "remoteUser": "vscode",
   "customizations": {
