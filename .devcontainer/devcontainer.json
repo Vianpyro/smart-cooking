@@ -18,7 +18,7 @@
     "source=moba-claude-${devcontainerId},target=/home/vscode/.claude,type=volume",
     "source=moba-gh-${devcontainerId},target=/home/vscode/.config/gh,type=volume"
   ],
-  "postCreateCommand": "cargo install sqlx-cli --no-default-features --features rustls,postgres --locked",
+  "postCreateCommand": "sudo chown -R vscode:vscode /home/vscode/.claude /home/vscode/.config/gh && cargo install sqlx-cli --no-default-features --features rustls,postgres --locked",
   "remoteUser": "vscode",
   "customizations": {
     "vscode": {
