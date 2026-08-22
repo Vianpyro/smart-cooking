@@ -7,7 +7,9 @@
   "service": "app",
   "workspaceFolder": "/workspace",
   "features": {
-    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/devcontainers/features/rust:1": {
+      "version": "1.98.0"
+    },
     "ghcr.io/devcontainers/features/node:1": {
       "version": "24"
     },

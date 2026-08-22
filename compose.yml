@@ -31,7 +31,7 @@ services:
     volumes:
       - object-storage-data:/data
     healthcheck:
-      test: ["CMD", "mc", "ready", "local"]
+      test: ["CMD-SHELL", "curl -fsS http://localhost:9000/minio/health/live"]
       interval: 5s
       timeout: 5s
       retries: 10
