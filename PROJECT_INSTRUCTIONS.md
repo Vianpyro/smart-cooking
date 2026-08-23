@@ -19,10 +19,10 @@ Assume I am the person you are talking to unless told otherwise.
 
 State-of-the-world assumptions this project runs on. Flag it if any becomes wrong.
 
-- Stack: SvelteKit (SSR) frontend, Rust/Axum REST API, PostgreSQL, S3-compatible
+- Stack: Astro (static) frontend, Rust/Axum REST API, PostgreSQL, S3-compatible
   object storage for images, transactional email provider for magic links.
 - Repository: single monorepo. Cargo workspace (`domain`, `storage`, `api`) plus
-  `web/` for SvelteKit. No submodules.
+  `web/` for Astro. No submodules.
 - The project is **open source**. Everything committed is public forever.
 - Solo development pace, no deadline. Correctness beats speed.
 

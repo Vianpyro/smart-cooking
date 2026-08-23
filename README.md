@@ -1,7 +1,7 @@
 # SmartCooking
 
 A community recipe-sharing web app. Rust API (Axum) backed by PostgreSQL,
-SvelteKit frontend, S3-compatible object storage for recipe images.
+Astro (static) frontend, S3-compatible object storage for recipe images.
 
 No application code exists yet — this repository currently holds only the
 development tooling and an empty crate/route skeleton.
@@ -12,7 +12,7 @@ development tooling and an empty crate/route skeleton.
 crates/domain/    entities and business rules, no I/O
 crates/storage/   sqlx repositories, DB mapping
 crates/api/       axum binary: routing, DTOs, auth
-web/              SvelteKit frontend
+web/              Astro frontend (static)
 migrations/       sqlx migrations (DDL only)
 fixtures/         seed data for local dev, applied explicitly
 docs/             Typst design documents
@@ -95,9 +95,9 @@ repository.
 ## Deployment
 
 Not set up yet — there is nothing to deploy. When it's needed: a
-container image build for `crates/api`, a Node adapter deployment (or
-container image) for `web/`, and a migration-apply step in the release
-pipeline ahead of traffic cutover.
+container image build for `crates/api`, a static build of `web/` published to
+GitHub Pages (no Node runtime in production, see `web/CLAUDE.md`), and a
+migration-apply step in the release pipeline ahead of traffic cutover.
 
 ## License
 

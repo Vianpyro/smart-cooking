@@ -11,7 +11,7 @@ cargo fmt --all --check
 echo "pre-commit: cargo clippy"
 cargo clippy --workspace --all-targets -- -D warnings
 
-web_files=$(git diff --cached --name-only --diff-filter=ACM -- 'web/**/*.ts' 'web/**/*.svelte' 'web/**/*.js' | sed 's#^web/##')
+web_files=$(git diff --cached --name-only --diff-filter=ACM -- 'web/**/*.ts' 'web/**/*.astro' 'web/**/*.js' | sed 's#^web/##')
 if [ -n "$web_files" ]; then
 	echo "pre-commit: web lint (changed files only)"
 	( cd web && echo "$web_files" | xargs npx eslint )

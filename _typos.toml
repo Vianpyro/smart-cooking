@@ -1,5 +1,5 @@
 [files]
-extend-exclude = ["*.lock", "web/package-lock.json", "web/.svelte-kit/**"]
+extend-exclude = ["*.lock", "web/package-lock.json", "web/.astro/**"]
 
 [default]
 extend-ignore-identifiers-re = ["^[0-9a-fA-F]{7,40}$"]

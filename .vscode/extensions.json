@@ -2,7 +2,7 @@
     "recommendations": [
         "rust-lang.rust-analyzer",
         "tamasfe.even-better-toml",
-        "svelte.svelte-vscode",
+        "astro-build.astro-vscode",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "myriad-dreamin.tinymist",

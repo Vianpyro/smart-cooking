@@ -16,8 +16,8 @@ docs/
 # Build output and dependencies (rebuilt inside the image)
 /target
 node_modules
-web/.svelte-kit
-web/build
+web/.astro
+web/dist
 
 # Environments and secrets
 .env

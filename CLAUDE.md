@@ -15,7 +15,7 @@ crates/
   domain/             # entities, business rules. No I/O, no web, no SQL.
   storage/            # sqlx repositories, DB types, mapping to/from domain
   api/                # axum binary: routing, extractors, DTOs, auth
-web/                  # SvelteKit app (see web/CLAUDE.md)
+web/                  # Astro app (see web/CLAUDE.md)
 migrations/           # sqlx migrations, DDL only
 fixtures/             # seed data for local dev, never applied automatically
 docs/                 # Typst design documents
