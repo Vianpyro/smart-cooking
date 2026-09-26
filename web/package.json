@@ -18,7 +18,7 @@
 		"@eslint/js": "^10.0.1",
 		"@types/node": "^26.6.2",
 		"astro": "^7.3.2",
-		"eslint": "^10.9.0",
+		"eslint": "^10.11.0",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-astro": "^3.1.0",
 		"globals": "^17.11.0",
